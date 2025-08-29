@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Aplikasi Multi Fitur", layout="centered")
 
-st.title("🔢 Aplikasi Multi Fitur dengan Streamlit")
+st.title("Aplikasi Multi Fitur dengan Streamlit")
 
 menu = st.sidebar.selectbox(
     "Pilih Fitur:",
@@ -13,10 +13,11 @@ menu = st.sidebar.selectbox(
 # 1. Kalkulator
 # ============================
 if menu == "Kalkulator":
-    st.header("🧮 Kalkulator Sederhana")
+    st.header("Kalkulator Sederhana")
     a = st.number_input("Masukkan angka pertama", value=0.0)
-    b = st.number_input("Masukkan angka kedua", value=0.0)
     operator = st.selectbox("Pilih Operator", ["+", "-", "×", "÷"])
+    b = st.number_input("Masukkan angka kedua", value=0.0)
+    
 
     if st.button("Hitung"):
         if operator == "+":
@@ -30,13 +31,13 @@ if menu == "Kalkulator":
                 hasil = a / b
             else:
                 hasil = "Error: Pembagian dengan nol"
-        st.success(f"Hasil: {hasil}")
+        st.error(f" {hasil}")
 
 # ============================
 # 2. Konversi Suhu
 # ============================
 elif menu == "Konversi Suhu":
-    st.header("🌡️ Konversi Suhu")
+    st.header("Konversi Suhu")
 
     pilihan_input = st.selectbox("Pilih satuan input", ["Celcius", "Reamur", "Fahrenheit"])
     nilai = st.number_input(f"Masukkan nilai suhu dalam {pilihan_input}", value=0.0)
@@ -55,17 +56,17 @@ elif menu == "Konversi Suhu":
             reamur = (4/9) * (nilai - 32)
             fahrenheit = nilai
 
-        st.write(f"🌡️ Celcius: {celcius:.2f} °C")
-        st.write(f"🌡️ Reamur: {reamur:.2f} °R")
-        st.write(f"🌡️ Fahrenheit: {fahrenheit:.2f} °F")
+        st.write(f" Celcius: {celcius:.2f} °C")
+        st.write(f" Reamur: {reamur:.2f} °R")
+        st.write(f" Fahrenheit: {fahrenheit:.2f} °F")
 
 # ============================
 # 3. Deret Fibonacci
 # ============================
 elif menu == "Deret Fibonacci":
-    st.header("🔢 Deret Fibonacci")
+    st.header(" Deret Fibonacci")
 
-    n = st.number_input("Masukkan jumlah suku Fibonacci", min_value=1, step=1)
+    n = st.number_input("Masukkan jumlah deret Fibonacci", min_value=1, step=1)
 
     def fibonacci(n):
         deret = []
